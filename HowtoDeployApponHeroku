@@ -1,0 +1,82 @@
+Step-1 Create a new environment using Anaconda prompt
+        conda create -n AppDeployment_Student_Admit python==3.6.9 (Python version is optional, but best practice)
+
+Step-2 To Switch and activate to the new envt using Conda
+        conda activate AppDeployment_Student_Admit
+Once, we switch to the new envt, every library installed will be in the installed in the switched envt
+
+Step-3 To check all the envt present inside the anaconda
+            conda env list
+
+If we want to use the same <env_name> in Pycharm
+Step - 4 Go to File> Settings >Project >Python Interpreter > Add > Conda Environment > Existing Environment
+            > Select Interpreter , navigate to the newly created envt folder(from Step-3) and select python.exe(Windows User)
+        Press OK, apply
+
+Step-5 Installing Flask can be done in 2 ways:
+        a) Go to the newly created <env_name> using
+            conda activate <env_name>
+            and use --> pip install flask
+
+         b) Click on Terminal in Pycharm and then install using--> pip install flask
+            only if we are getting the <env_name> in the terminal
+            Note --> if <env_name> or base is not received in terminal then use option a)
+
+Step-6 If we have to create the envt from Pycharm itself
+        Go to File> Settings >Project >Python Interpreter > Add > Conda Environment > New Enviroment
+        > Provide a Name and Select the Python Version
+
+### Imp!!! To Share the project to an end user,it is recommended to use below step before executing the project####
+Step - 7 Go to Anaconda prompt and the particular folder where the project is saved and install requirements.txt
+         To create requirements.txt file -->   pip freeze > requirements.txt
+         Install-->   pip install -r requirements.txt
+
+(Testing purpose)
+		on your command prompt type --> git    it should show you the git usage command
+
+
+
+Make sure we have the heroku cli installed
+	(Testing purpose)
+		on your command prompt type --> heroku    it should show you the heroku usage command
+
+-- Deployment on Heroku
+1. Create a Procfile without any extension under the main folder
+and write - web: gunicorn app:app
+here first app is the python file name and second app is the Flask object
+
+All the below command need to be executed from your project folder
+    # Right click and Launch git bash here
+	# git init   - initializing the git
+	# git status  - to track the status of the files and folders. Initially RED
+	# create a simple file from any of the text editor name it as .gitignore
+	# Whatever the files or folders you don't want to push on you github repo. Add there names inside 	the file
+	# git add .  - To start TRACKING
+	# git status - Now GREEN
+	# git commit -m "initial commit"  - To commit the files that we were above tracking
+    # heroku login
+    # heroku create
+    # git remote -v
+    # git push heroku master
+
+
+Task 1: Create a heroku account on heroku.com
+        https://signup.heroku.com/
+Task 2: Install GIT
+        https://git-scm.com/downloads
+Task 3: Install Heroku cli
+        https://devcenter.heroku.com/articles/heroku-cli
+
+
+
+
+
+
+
+
+
+
+
+
+
+
